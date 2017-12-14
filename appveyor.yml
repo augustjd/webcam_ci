@@ -18,7 +18,7 @@ build:
     project: '$(APPVEYOR_BUILD_FOLDER)\webcam_solution.sln'
 
 test_script:
-    - %APPVEYOR_BUILD_FOLDER%\test\%CONFIGURATION%\webcam_tests.exe --gtest_output=xml:tests.xml
+    - cmd: '%APPVEYOR_BUILD_FOLDER%\test\%CONFIGURATION%\webcam_tests.exe --gtest_output=xml:tests.xml'
 
 on_finish:
-    - ps: (new-object net.webclient).UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\tests.xml))
+    - ps: '(new-object net.webclient).UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\tests.xml))'
