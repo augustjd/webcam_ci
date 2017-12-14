@@ -18,4 +18,4 @@ build:
     project: '$(APPVEYOR_BUILD_FOLDER)\webcam_solution.sln'
 
 test_script:
-    - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\webcam_tests.exe'
+    - '%APPVEYOR_BUILD_FOLDER%\%CONFIGURATION%\test\webcam_tests.exe'
