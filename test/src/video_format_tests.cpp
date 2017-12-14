@@ -10,4 +10,9 @@ TEST(VideoFormat, EqualityOperator) {
     VideoFormat b = {1280, 720, 30};
 
     ASSERT_EQ(a, b);
+
+    VideoFormat c = {1280, 720, 30};
+    VideoFormat d = {1280, 1280, 30};
+
+    ASSERT_TRUE(!(c == d));
 }

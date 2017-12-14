@@ -4,6 +4,9 @@ project(webcam_solution)
 
 add_subdirectory(webcam)
 
+
+set(BUILD_TESTS on)
+
 if (BUILD_TESTS)
     add_subdirectory(test)
     set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/.travis/cmake)
